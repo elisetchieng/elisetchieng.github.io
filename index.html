@@ -6,13 +6,57 @@
     <title>Elise Tchieng | Portfolio</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 20px;
+            margin: 0;
+            padding: 32px;
             color: #333;
-            background: #fafafa;
+            background: #d8c3a5;
+        }
+
+        .layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 48px;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 32px;
+            flex: 0 0 190px;
+            padding: 24px 0;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-radius: 20px;
+        }
+
+        .sidebar a:hover,
+        .sidebar a:focus {
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        main {
+            flex: 1;
+            min-width: 0;
+            max-width: 900px;
+            padding: 20px 0 60px;
         }
 
         h1 {
@@ -21,6 +65,7 @@
 
         h2 {
             margin-top: 40px;
+            scroll-margin-top: 24px;
         }
 
         a {
@@ -28,46 +73,117 @@
         }
 
         .project {
-            padding: 20px;
+            padding: 24px;
             background: white;
-            border-radius: 12px;
+            border-radius: 40px;
             margin-bottom: 20px;
+            scroll-margin-top: 24px;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 16px;
+            }
+
+            .layout {
+                display: block;
+            }
+
+            .sidebar {
+                position: static;
+                padding: 8px 0;
+            }
+
+            .sidebar nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+
+            main {
+                padding-top: 8px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="layout">
+        <aside class="sidebar" aria-label="Portfolio navigation">
+            <nav>
+                <a href="#recent-projects">Recent Projects</a>
+                <a href="#ui-ux">UI/UX</a>
+                <a href="#hci">HCI</a>
+                <a href="#research">Research</a>
+                <a href="#marketing">Marketing</a>
+            </nav>
+        </aside>
 
-    <h1>Elise Tchieng</h1>
-    <p>UX Research | Human Factors | Healthcare</p>
+        <main>
+            <h1>Elise Tchieng</h1>
+            <p>UX Research | Human Factors | Healthcare</p>
 
-    <p>
-        Exploring how human behavior, research, and design intersect to create meaningful user experiences.
-    </p>
+            <p>
+                Exploring how human behavior, research, and design intersect to create meaningful user experiences.
+            </p>
 
-    <h2>Projects</h2>
+            <section id="recent-projects">
+                <h2>Recent Projects</h2>
 
-    <div class="project">
-        <h3>Apple Weather Redesign</h3>
-        <p>UX research and interface redesign focused on destination comparison.</p>
-        <a href="#">View Project</a>
-        <p><a href="https://www.figma.com/deck/2hnFheyB71wnPxdkB4Y2KW/UX-UI-Midterm?node-id=3-51&amp;t=0gILDQMonUhv0Rou-1">View Presentation</a></p>
+                <div class="project">
+                    <h3>Apple Weather Redesign</h3>
+                    <p>UX research and interface redesign focused on destination comparison.</p>
+                    <p><a href="https://www.figma.com/deck/2hnFheyB71wnPxdkB4Y2KW/UX-UI-Midterm?node-id=3-51&amp;t=0gILDQMonUhv0Rou-1" target="_blank" rel="noopener noreferrer">View Presentation</a></p>
+                </div>
+
+                <div class="project">
+                    <h3>Modern Door Selection Study</h3>
+                    <p>Human-computer interaction research exploring door usability and signage in exchange students in South Korea.</p>
+                </div>
+            </section>
+
+            <section id="ui-ux">
+                <h2>UI/UX</h2>
+                <div class="project">
+                    <h3>Apple Weather Redesign</h3>
+                    <p>UX research and interface redesign focused on destination comparison.</p>
+                    <p><a href="https://www.figma.com/deck/2hnFheyB71wnPxdkB4Y2KW/UX-UI-Midterm?node-id=3-51&amp;t=0gILDQMonUhv0Rou-1" target="_blank" rel="noopener noreferrer">View Presentation</a></p>
+                </div>
+            </section>
+
+            <section id="hci">
+                <h2>HCI</h2>
+                <div class="project">
+                    <h3>Modern Door Selection Study</h3>
+                    <p>Human-computer interaction research exploring door usability and signage in exchange students in South Korea.</p>
+                </div>
+            </section>
+
+            <section id="research">
+                <h2>Research</h2>
+                <div class="project">
+                    <h3>Modern Door Selection Study</h3>
+                    <p>Human-computer interaction research exploring door usability and signage in exchange students in South Korea.</p>
+                </div>
+            </section>
+
+            <section id="marketing">
+                <h2>Marketing</h2>
+            </section>
+
+            <section id="about">
+                <h2>About Me</h2>
+                <p>
+                    Grand Valley State University (Grand Rapids, MI) graduate with a B.S. in Behavioral Neuroscience. Interest in UX/UI, HCI, I/O, project management, and medical research.
+                </p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>Email: elise.tchieng@email.com</p>
+                <p><a href="#">LinkedIn</a></p>
+            </section>
+        </main>
     </div>
-
-    <div class="project">
-        <h3>Modern Door Selection Study</h3>
-        <p>Human-computer interaction research exploring door usability and signage in exchange students in South Korea.</p>
-        <a href="#">View Project</a>
-    </div>
-
-    <h2>About Me</h2>
-    <p>
-        Grand Valley State University (Grand Rapids, MI) graduate with a B.S. in Behavioral Neuroscience. Interest in UX/UI, HCI, I/O, project management, and medical research.
-    </p>
-
-    <h2>Contact</h2>
-    <p>Email: elise.tchieng@email.com</p>
-    <p><a href="#">LinkedIn</a></p>
-
 </body>
 </html>
